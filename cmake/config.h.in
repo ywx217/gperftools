@@ -1,0 +1,207 @@
+#ifndef GPERFTOOLS_CONFIG_H_
+#define GPERFTOOLS_CONFIG_H_
+
+#cmakedefine HAVE_SNPRINTF
+
+#cmakedefine HAVE_BUILTIN_STACK_POINTER
+
+#cmakedefine HAVE_CONFLICT_SIGNAL_H
+
+#cmakedefine HAVE_CYGWIN_SIGNAL_H
+
+#cmakedefine01 HAVE_DECL_CFREE
+
+#cmakedefine01 HAVE_DECL_MEMALIGN
+
+#cmakedefine01 HAVE_DECL_POSIX_MEMALIGN
+
+#cmakedefine01 HAVE_DECL_PVALLOC
+
+#cmakedefine01 HAVE_DECL_UNAME
+
+#cmakedefine01 HAVE_DECL_VALLOC
+
+#cmakedefine HAVE_DLFCN_H
+
+#cmakedefine HAVE_ELF32_VERSYM
+
+#cmakedefine HAVE_EXECINFO_H
+
+#cmakedefine HAVE_FCNTL_H
+
+#cmakedefine HAVE_FEATURES_H
+
+#cmakedefine HAVE_GETEUID
+
+#cmakedefine HAVE_GETPAGESIZE
+
+#cmakedefine HAVE_GLOB_H
+
+#cmakedefine HAVE_GRP_H
+
+#cmakedefine HAVE_INTTYPES_H
+
+#cmakedefine01 HAVE_LIBUNWIND_H
+
+#cmakedefine HAVE_LINUX_PTRACE_H
+
+#cmakedefine HAVE_MALLOC_H
+
+#cmakedefine HAVE_MALLOC_MALLOC_H
+
+#cmakedefine HAVE_MEMORY_H
+
+#cmakedefine HAVE_MMAP
+
+#cmakedefine HAVE_NAMESPACES
+
+#cmakedefine HAVE_POLL_H
+
+#cmakedefine HAVE_PROGRAM_INVOCATION_NAME
+
+#cmakedefine HAVE_PTHREAD
+
+#cmakedefine HAVE_PWD_H
+
+#cmakedefine HAVE_SBRK
+
+#cmakedefine HAVE_FORK
+
+#cmakedefine HAVE_SCHED_H
+
+#cmakedefine HAVE_STDINT_H
+
+#cmakedefine HAVE_STDLIB_H 1
+
+#cmakedefine HAVE_STRINGS_H
+
+#cmakedefine HAVE_STRING_H
+
+#cmakedefine HAVE_STRUCT_MALLINFO
+
+#cmakedefine HAVE_SYS_CDEFS_H
+
+#cmakedefine HAVE_SYS_MALLOC_H
+
+#cmakedefine HAVE_SYS_PARAM_H
+
+#cmakedefine HAVE_SYS_PRCTL_H
+
+#cmakedefine HAVE_SYS_RESOURCE_H
+
+#cmakedefine HAVE_SYS_SOCKET_H
+
+#cmakedefine HAVE_SYS_STAT_H
+
+#cmakedefine HAVE_SYS_SYSCALL_H
+
+#cmakedefine HAVE_SYS_TYPES_H
+
+#cmakedefine HAVE_SYS_UCONTEXT_H
+
+#cmakedefine HAVE_SYS_WAIT_H
+
+#cmakedefine HAVE_TLS
+
+#cmakedefine01 HAVE_DECL_SLEEP
+
+#cmakedefine01 HAVE_DECL_NANOSLEEP
+
+#cmakedefine01 HAVE_DECL_BACKTRACE
+
+#cmakedefine HAVE_UNWIND_BACKTRACE
+
+#cmakedefine HAVE_UCONTEXT_H
+
+#cmakedefine HAVE_UNISTD_H
+
+#cmakedefine HAVE_UNWIND_H
+
+#cmakedefine HAVE_VALGRIND_H
+
+#cmakedefine HAVE___ATTRIBUTE__
+
+#cmakedefine HAVE___ENVIRON
+
+#cmakedefine HAVE___INT64
+
+#cmakedefine INSTALL_PREFIX
+
+#cmakedefine INT32_EQUALS_INTPTR
+
+#cmakedefine LT_OBJDIR
+
+#cmakedefine MALLOC_HOOK_MAYBE_VOLATILE
+
+#undef NO_MINUS_C_MINUS_O
+
+#define PACKAGE "@PROJECT_NAME@"
+
+#define PACKAGE_BUGREPORT "gperftools@googlegroups.com"
+
+#define PACKAGE_NAME "@PROJECT_NAME@"
+
+#define PACKAGE_STRING "@PROJECT_NAME@ @PROJECT_VERSION@"
+
+#define PACKAGE_TARNAME "@PROJECT_NAME@"
+
+#cmakedefine PACKAGE_URL
+
+#define PACKAGE_VERSION "@PROJECT_VERSION@"
+
+#define PC_FROM_UCONTEXT @PC_FROM_UCONTEXT_DEF@
+
+#cmakedefine WIN32
+#if defined(WIN32)
+#ifndef PERFTOOLS_DLL_DECL
+# define PERFTOOLS_IS_A_DLL  1   # define PERFTOOLS_DLL_DECL  __declspec(dllexport)
+# define PERFTOOLS_DLL_DECL_FOR_UNITTESTS  __declspec(dllimport)
+#endif
+#else
+#ifndef PERFTOOLS_DLL_DECL
+# define PERFTOOLS_DLL_DECL
+# define PERFTOOLS_DLL_DECL_FOR_UNITTESTS
+#endif
+#endif
+
+#define PRIdS  "Id"
+
+#define PRIuS  "Iu"
+
+#define PRIxS  "Ix"
+
+#cmakedefine PTHREADS_CRASHES_IF_RUN_TOO_EARLY
+
+#define PTHREAD_CREATE_JOINABLE @PTHREAD_CREATE_JOINABLE@
+
+#define STDC_HEADERS 1
+
+#define STL_NAMESPACE @STL_NAMESPACE@
+
+#define VERSION @PROJECT_VERSION@
+
+#ifndef __STDC_FORMAT_MACROS
+# define __STDC_FORMAT_MACROS 1
+#endif
+
+#ifndef __cplusplus
+#define inline @inline@
+#endif
+
+#if defined(WIN32)
+
+#ifndef _WIN32_WINNT
+# define _WIN32_WINNT 0x0501
+#endif
+
+#define NO_HEAP_CHECK 1
+
+#include "windows/port.h"
+
+#endif
+
+#ifdef __MINGW32__
+#include "windows/mingw.h"
+#endif
+
+#endif
