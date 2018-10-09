@@ -385,7 +385,7 @@ foreach(attr "PTHREAD_CREATE_JOINABLE" "PTHREAD_CREATE_UNDETACHED")
     break()
   endif()
 endforeach()
-list(APPEND libs Threads::Threads)
+list(APPEND libs ${CMAKE_THREAD_LIBS_INIT})
 
 if(FreeBSD)
   set(PTHREADS_CRASHES_IF_RUN_TOO_EARLY ON)
