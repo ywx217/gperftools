@@ -748,14 +748,6 @@ if(gperftools_build_benchmark)
       benchmark/malloc_bench.cc ${emergency_malloc_cc})
     target_link_libraries(malloc_bench_full PUBLIC
       run_benchmark tcmalloc)
-
-    if(NOT APPLE)
-      add_executable(unwind_bench
-        benchmark/unwind_bench.cc
-        benchmark/getcontext_light.cc
-        ${emergency_malloc_cc})
-      target_link_libraries(unwind_bench PUBLIC run_benchmark tcmalloc)
-    endif()
   endif()
 
   add_executable(binary_trees benchmark/binary_trees.cc)
